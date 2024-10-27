@@ -1,0 +1,89 @@
+<!--Gabriela Monforte Dias      Numero: 10        Serie: 3A
+    Julia De Souza De Nobrega   Numero: 18
+    
+    Descrição: Formulario de cpf
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario CPF</title>
+    <script src="formulario.js"></script>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif; 
+            background-color: #f4f4f4; 
+            margin: 0;
+            padding: 20px;
+        }
+    
+        h1 {
+            text-align: center; 
+            color: #a327c2; 
+        }
+    
+        form {
+            background: white; 
+            max-width: 500px; 
+            margin: 20px auto; 
+            padding: 20px; 
+        }
+    
+        label {
+            display: block; 
+            margin: 10px 0 5px; 
+            font-weight: bold; 
+        }
+    
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        input[type="password"] {
+            width: 100%; 
+            padding: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px;
+            box-sizing: border-box; 
+            margin-bottom: 15px; 
+        }
+    
+        input[type="submit"] {
+            background-color: #cb61da; 
+            color: white; 
+            border: none; 
+            padding: 10px; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            font-size: 16px; 
+        }
+    </style>
+    
+    <h1>Formulario</h1>
+    
+    <form onsubmit="processarEnvio(event)">
+    <label for="nomeCompleto">Nome Completo:</label>
+    <input type="text" id="nomeCompleto" name="nomeCompleto" required oninput="formatarNome()"><br><br>
+    <label for="nascimentoUsuario">Data de Nascimento:</label>
+    <input type="date" id="nascimentoUsuario" name="nascimentoUsuario" onchange="validarDataDeNascimento()" required><br><br>
+    <label for="idadeUsuario">Idade:</label>
+    <input type="number" id="idadeUsuario" name="idadeUsuario" readonly><br><br>
+    <label for="cpfUsuario">CPF:</label>
+    <input type="text" id="cpfUsuario" name="cpfUsuario" required placeholder="000.000.000-00" maxlength="14" oninput="aplicarMascaraCPF()"><br><br>
+    <label for="telefoneUsuario">Telefone:</label>
+    <input type="text" id="telefoneUsuario" name="telefoneUsuario" required placeholder="(00) 00000-0000" maxlength="15" oninput="aplicarMascaraTelefone()"><br><br>
+    <label for="nomeUsuario">Usuario:</label>
+    <input type="text" id="nomeUsuario" name="nomeUsuario" required><br><br>
+    <label for="senhaUsuario">Senha:</label>
+    <input type="password" id="senhaUsuario" name="senhaUsuario" required><br><br>
+    <label for="repetirSenha">Confirmar Senha:</label>
+    <input type="password" id="repetirSenha" name="repetirSenha" required><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
+<!-- fim do codigo-->
